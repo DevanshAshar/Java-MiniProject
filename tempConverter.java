@@ -16,8 +16,8 @@ class TC extends JFrame
 	
 	public void setComp()
 	{
-		String arr1[] = {"Celsius","Fahrenheit","Kelvin","Rankine","Reaumur"};
-		String arr2[] = {"Celsius","Fahrenheit","Kelvin","Rankine","Reaumur"};
+		String arr1[] = {"Celsius","Fahrenheit","Kelvin"};
+		String arr2[] = {"Celsius","Fahrenheit","Kelvin"};
 		l1 = new JLabel("To");
 		l2 = new JLabel("Enter the Value:");
 		l3 = new JLabel("Converted Value:");
@@ -28,9 +28,9 @@ class TC extends JFrame
 		t2 = new JTextField();
 		b = new JButton("Convert");
 		dot = new JButton(".");
-		pm = new JButton("±");
+		pm = new JButton("-");
 		bs = new JButton("<--");
-		ac = new JButton("AC");
+		ac = new JButton("C");
 		n0 = new JButton("0");
 		n1 = new JButton("1");
 		n2 = new JButton("2");
@@ -174,14 +174,6 @@ class TC extends JFrame
 				{
 					t2.setText(""+t1.getText());
 				}
-				else if(x=="Rankine" && y=="Rankine")
-				{
-					t2.setText(""+t1.getText());
-				}
-				else if(x=="Reaumur" && y=="Reaumur")
-				{
-					t2.setText(""+t1.getText());
-				}
 				
 				else if(x=="Celsius" && y=="Fahrenheit")
 				{
@@ -195,20 +187,6 @@ class TC extends JFrame
 					String s = t1.getText();
 					float a = Float.parseFloat(s);
 					float b = (float)(a + 273.15);
-					t2.setText(""+b);
-				}
-				else if(x=="Celsius" && y=="Rankine")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 9/5 + 32 + 459.67);
-					t2.setText(""+b);
-				}
-				else if(x=="Celsius" && y=="Reaumur")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 0.8);
 					t2.setText(""+b);
 				}
 				
@@ -226,22 +204,7 @@ class TC extends JFrame
 					float b = (float)((a - 32) * 5/9 + 273.15);
 					t2.setText(""+b);
 				}
-				else if(x=="Fahrenheit" && y=="Rankine")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a + 459.67);
-					t2.setText(""+b);
-				}
-				else if(x=="Fahrenheit" && y=="Reaumur")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)((a - 32)/2.25);
-					t2.setText(""+b);
-				}
-				
-				//Kelvin to others.........................
+                
 				else if(x=="Kelvin" && y=="Celsius")
 				{
 					String s = t1.getText();
@@ -256,78 +219,7 @@ class TC extends JFrame
 					float b = (float)((a - 273.15) * 9/5 + 32);
 					t2.setText(""+b);
 				}
-				else if(x=="Kelvin" && y=="Rankine")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 9/5);
-					t2.setText(""+b);
-				}
-				else if(x=="Kelvin" && y=="Reaumur")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)((a - 273.15) * 0.8);
-					t2.setText(""+b);
-				}
 				
-				else if(x=="Rankine" && y=="Celsius")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(( a - 32 - 459.67) / 1.8);
-					t2.setText(""+b);
-				}
-				else if(x=="Rankine" && y=="Fahrenheit")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a - 459.67);
-					t2.setText(""+b);
-				}
-				else if(x=="Rankine" && y=="Kelvin")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a/1.8);
-					t2.setText(""+b);
-				}
-				else if(x=="Rankine" && y=="Reaumur")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(( a - 32 - 459.67) / 2.25);
-					t2.setText(""+b);
-				}
-				
-				else if(x=="Reaumur" && y=="Celsius")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a*1.25);
-					t2.setText(""+b);
-				}
-				else if(x=="Reaumur" && y=="Fahrenheit")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 2.25 + 32);
-					t2.setText(""+b);
-				}
-				else if(x=="Reaumur" && y=="Kelvin")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 1.25 + 273.15);
-					t2.setText(""+b);
-				}
-				else if(x=="Reaumur" && y=="Rankine")
-				{
-					String s = t1.getText();
-					float a = Float.parseFloat(s);
-					float b = (float)(a * 2.25 + 32 + 459.67);
-					t2.setText(""+b);
-				}
                  /*class tempConverter {
                     
                 }*/
