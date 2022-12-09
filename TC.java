@@ -1,10 +1,11 @@
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.awt.*;
+
 
 class TC extends JFrame
 {
-	
+	Container c;
     JLabel l1,l2,l3,l4;
 	JComboBox tc1, tc2;
 	JTextField t1,t2;
@@ -18,23 +19,29 @@ class TC extends JFrame
 	
 	public void setComp()
 	{
-		String arr1[] = {"Celsius","Fahrenheit","Kelvin"};
+		c= getContentPane(); 
+        String arr1[] = {"Celsius","Fahrenheit","Kelvin"};
 		String arr2[] = {"Celsius","Fahrenheit","Kelvin"};
 		l1 = new JLabel("To");
+        l1.setFont(new Font("Tahoma", Font.BOLD, 10));
 		l2 = new JLabel("Enter the Value:");
-        l2.setFont(new Font("Times New Roman", Font.BOLD, 10));
+        l2.setFont(new Font("Tahoma", Font.BOLD, 10));
 		l3 = new JLabel("Converted Value:");
-        l3.setFont(new Font("Monospace", Font.BOLD, 12));
+        l3.setFont(new Font("Tahoma", Font.BOLD, 10));
 		l4 = new JLabel("From");
+        l4.setFont(new Font("Tahoma", Font.BOLD, 10));
 		tc1 = new JComboBox(arr1);
 		tc2 = new JComboBox(arr2);
 		t1 = new JTextField();
 		t2 = new JTextField();
 		b = new JButton("Convert");
+        b.setBackground(Color.GREEN);
 		dot = new JButton(".");
-		pm = new JButton("-");
+		pm = new JButton("±");
 		bs = new JButton("<--");
 		ac = new JButton("C");
+        ac.setBackground(Color.DARK_GRAY);
+        ac.setForeground(Color.white);
 		n0 = new JButton("0");
 		n1 = new JButton("1");
 		n2 = new JButton("2");
@@ -50,7 +57,7 @@ class TC extends JFrame
 		t1.setBounds(200,50,100,20);
 		l1.setBounds(100,75,50,20);
 		l4.setBounds(90,25,50,20);
-		l2.setBounds(200,35,100,20);
+		l2.setBounds(200,25,100,20);
 		l3.setBounds(200,75,100,20);
 		tc2.setBounds(75,100,100,20);
 		t2.setBounds(200,100,100,20);
@@ -84,29 +91,29 @@ class TC extends JFrame
 		n7.addActionListener(new Handler());
 		n8.addActionListener(new Handler());
 		n9.addActionListener(new Handler());
-		add(tc1);
-		add(tc2);
-		add(l1);
-		add(l2);
-		add(l3);
-		add(l4);
-		add(t1);
-		add(t2);
-		add(b);
-		add(ac);
-		add(dot);
-		add(pm);
-		add(bs);
-		add(n0);
-		add(n1);
-		add(n2);
-		add(n3);
-		add(n4);
-		add(n5);
-		add(n6);
-		add(n7);
-		add(n8);
-		add(n9);
+		c.add(tc1);
+		c.add(tc2);
+		c.add(l1);
+		c.add(l2);
+		c.add(l3);
+		c.add(l4);
+		c.add(t1);
+		c.add(t2);
+		c.add(b);
+		c.add(ac);
+		c.add(dot);
+		c.add(pm);
+		c.add(bs);
+		c.add(n0);
+		c.add(n1);
+		c.add(n2);
+		c.add(n3);
+		c.add(n4);
+		c.add(n5);
+		c.add(n6);
+		c.add(n7);
+		c.add(n8);
+		c.add(n9);
 		t2.setEditable(false);
 	}
 	
@@ -226,14 +233,11 @@ class TC extends JFrame
                         t2.setText(""+b);
                     }
                     
-                     /*class tempConverter {
-                        
-                    }*/
                     
                 }
             }catch(Exception err){
                 System.out.println("Error"+" "+err);
-                JOptionPane.showMessageDialog(setComp(),"Unsuccessful Login");
+                JOptionPane.showMessageDialog(c,"Invalid Input");
             }
             
         }
